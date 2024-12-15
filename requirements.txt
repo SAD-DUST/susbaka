@@ -4,3 +4,5 @@ loguru
 websockets_proxy
 fake_useragent
 websockets==12.0
+cloudscraper
+signal
