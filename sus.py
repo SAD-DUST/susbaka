@@ -195,8 +195,7 @@ async def call_api_info(token, proxy_url):
     )
     response.raise_for_status()
     return response.json()
-# Main function to run the program
-# Updated `call_api_info` call to await it properly
+    
 async def main():
     if check_for_update():
         logger.info("Restarting script to apply new version...")
@@ -214,7 +213,10 @@ async def main():
                 first_proxy = format_proxy(proxy_string, proxy_type)
                 try:
                     user_data = await call_api_info(NP_TOKEN, first_proxy) 
-                    break
+                    if user_data and user_data.get('success'):
+                        break
+                    else:
+                        logger.error(f"Authentication failed: {user_data.get('msg', 'No message')}")
                 except Exception as e:
                     logger.error(f"Proxy {first_proxy} is invalid: {e}")
                     continue
@@ -226,7 +228,7 @@ async def main():
             logger.warning("Authentication failed. Retrying...")
             await asyncio.sleep(1)  # Use asyncio.sleep for async context
 
-    if user_data:
+    if user_data and user_data.get('data'):
         logger.debug(user_data)
         USER_ID = user_data['data']['uid']
         threads = []
