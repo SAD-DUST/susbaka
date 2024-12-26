@@ -31,7 +31,7 @@ def filter_non_empty_lines(lines):
     return [line for line in lines if line.strip()]
 
 # Read configuration values from files
-NP_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzEwMjQ3ODQ1MzE5NjcxODA4IiwiaWF0IjoxNzMzODM1NTQwLCJleHAiOjE3MzUwNDUxNDB9.JSI41mtK9aaf8MKNPM5oR0DSJHDjJNizoifgiVbGiTeb3_xjKzUFo_WSV8_r1293TLGr0WFB4GBbdoXtSEGe_A"
+NP_TOKEN = "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxMzEwMjQ3ODQ1MzE5NjcxODA4IiwiaWF0IjoxNzM1MjI3ODQ4LCJleHAiOjE3MzY0Mzc0NDh9.oCuaLZTJVOFtK8aUQXPWU2jLgjsKWhpGyF3nnJYs2wyctmE2dcF6uCskmbjevcVMkmErCJGZYY_L65iQ3FNG1A"
 
 r = requests.get("https://api.proxyscrape.com/v4/free-proxy-list/get?request=display_proxies&proxy_format=ipport&format=text", stream=True)
 if r.status_code == 200:
