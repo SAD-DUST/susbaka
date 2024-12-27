@@ -51,7 +51,7 @@ RETRY_INTERVAL = 60  # Retry interval for failed proxies in seconds
 EXTENSION_VERSION = "2.2.7"
 GITHUB_REPO = "NodeFarmer/nodepay"
 CURRENT_VERSION = "1.4.0"
-NODEPY_FILENAME = "nodepay.py"
+NODEPY_FILENAME = "sus.py"
 
 # Function to download the latest version of the script
 def download_latest_version():
